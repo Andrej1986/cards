@@ -30,7 +30,7 @@ public class CardsController {
         return cardsRepository.findByCustomerId(customer.getCustomerId());
     }
 
-    @GetMapping("cards/properties")
+    @GetMapping("/cards/properties")
     public String getCardsProperties() throws JsonProcessingException {
         ObjectWriter objectWriter = new ObjectMapper().writer().withDefaultPrettyPrinter();
         Properties properties = new Properties(cardServiceConfig.getMsg(), cardServiceConfig.getBuildVersion(),
